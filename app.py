@@ -8,6 +8,12 @@ Entry point. This file is intentionally thin — it only handles:
   4. Calling the component renderers in order
 """
 
+import sys
+import os
+
+# Ensure Streamlit Cloud can locate the local packages (data/, components/, styles/)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import streamlit as st
 
 from styles import MAIN_CSS
